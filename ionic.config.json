@@ -1,0 +1,7 @@
+{
+  "name": "Price Calculator",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
