@@ -7,6 +7,29 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  cost: number;
+  costingPrice: number;
+  sellingPrice: number;
+  markupValue : number;
+  iva: number;
+  check = {
+    selected: true
+  }
+  constructor() {
+    this.sellingPrice = 0;
+    this.iva = 1.19;
+  }
+
+  public priceType(){
+    this.check.selected  ? false : true;
+  }
+
+  public calculateSellingPrice() {
+    this.cost = this.costingPrice;
+    if (!this.check.selected) {
+      this.cost *= this.iva;
+    }
+    this.sellingPrice = ((this.markupValue / 100) + 1) * this.cost;
+  }
 
 }
